@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="canonical" href="https://locreseau.fr/">
 <title>Fibre bloquée, regard télécom à Bordeaux et Lormont — LOC RÉSEAU</title>
-<meta name="description" content="LOC RÉSEAU retrouve votre regard télécom, débloque les gaines écrasées et répare les câbles fibre à Bordeaux, Lormont et dans toute la Gironde. Appelez le 06 70 15 09 04.">
+<meta name="description" content="Fibre bloquée ? LOC RÉSEAU localise le blocage, débouche la gaine et rend votre ligne raccordable, à Bordeaux, Lormont et en Gironde. Diagnostic : 230 € TTC.">
 <meta property="og:title" content="LOC RÉSEAU — Votre fibre ne passe pas ? On trouve où ça bloque.">
 <meta property="og:description" content="Regard introuvable, gaine écrasée, câble arraché : localisation et déblocage à Bordeaux et dans toute la Gironde.">
 <meta property="og:type" content="website">
@@ -21,7 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"LOC RÉSEAU","url":"https://locreseau.fr/","image":"https://locreseau.fr/img/technicien.webp","description":"Recherche de regard télécom, déblocage de gaine, création de regard, réparation de câble fibre et détection de réseaux enterrés","telephone":"+33670150904","address":{"@type":"PostalAddress","addressLocality":"Lormont","postalCode":"33310","addressCountry":"FR"},"areaServed":[{"@type":"City","name":"Bordeaux"},{"@type":"City","name":"Lormont"},{"@type":"City","name":"Le Bouscat"},{"@type":"City","name":"Cenon"},{"@type":"City","name":"Floirac"},{"@type":"City","name":"Bassens"},{"@type":"City","name":"Mérignac"},{"@type":"AdministrativeArea","name":"Gironde"}],"openingHours":"Mo-Sa 08:00-18:00"}
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"LOC RÉSEAU","url":"https://locreseau.fr/","image":"https://locreseau.fr/img/technicien.webp","description":"Recherche de regard télécom, déblocage de gaine, création de regard, réparation de câble fibre et détection de réseaux enterrés","telephone":"+33670150904","address":{"@type":"PostalAddress","addressLocality":"Lormont","postalCode":"33310","addressCountry":"FR"},"areaServed":[{"@type":"City","name":"Bordeaux"},{"@type":"City","name":"Lormont"},{"@type":"City","name":"Le Bouscat"},{"@type":"City","name":"Cenon"},{"@type":"City","name":"Floirac"},{"@type":"City","name":"Bassens"},{"@type":"City","name":"Mérignac"},{"@type":"AdministrativeArea","name":"Gironde"}],"openingHours":"Mo-Sa 08:00-18:00","makesOffer":{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diagnostic simple fibre : localisation du point de blocage"},"price":"230","priceCurrency":"EUR"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"LOC RÉSEAU","url":"https://locreseau.fr/"}
@@ -488,7 +488,13 @@
   .price-proof { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; margin-top: 18px; padding: 10px 14px; border-radius: 12px; background: rgba(255,255,255,.05); border: 1px solid var(--line); color: var(--muted); font-size: 14px; text-decoration: none; transition: border-color .2s; }
   .price-proof:hover { border-color: var(--line-2); }
   .price-proof b { color: var(--text); font-weight: 600; }
-  .price-card .amount .ins { margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+  /* Ce qui est compris dans chaque offre : la liste prend la place libre, le prix reste aligné en bas des cartes */
+  .price-card:has(.incl) p { flex: none; }
+  .price-card .incl { list-style: none; margin: 2px 0 0; padding: 0; display: grid; gap: 7px; align-content: start; flex: 1; }
+  .price-card .incl li { position: relative; padding-left: 22px; color: var(--text); font-size: 14px; line-height: 1.4; }
+  .price-card .incl li::before { content: ""; position: absolute; left: 2px; top: .3em; width: 11px; height: 6px; border-left: 2px solid var(--ok); border-bottom: 2px solid var(--ok); transform: rotate(-45deg); }
+  .more-svc { margin: 16px 0 0; padding: 14px 18px; border-radius: 14px; border: 1px dashed var(--line-2); color: var(--muted); font-size: 14.5px; }
+  .more-svc b { color: var(--text); font-weight: 600; }
   .price-card.main { border-color: rgba(255,130,92,.5); box-shadow: 0 18px 40px -26px rgba(240,83,47,.7); }
   .price-foot { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
   .price-foot p { color: var(--dim); font-size: 13.5px; margin: 0; max-width: 60ch; }
@@ -563,6 +569,9 @@
     .price-card p { font-size: 14px; }
     .price-card .amount { margin-top: 4px; padding-top: 10px; }
     .price-card .amount strong.tbd { font-size: 15px; }
+    .price-card .incl { gap: 5px; }
+    .price-card .incl li { font-size: 13.5px; }
+    .more-svc { margin-top: 10px; padding: 12px 14px; font-size: 13.5px; }
     .rev-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-inline: -16px; padding-inline: 16px; padding-bottom: 6px; scrollbar-width: none; }
     .rev-grid::-webkit-scrollbar { display: none; }
     .rev { flex: 0 0 84%; scroll-snap-align: center; }
@@ -684,7 +693,7 @@
         </div>
         <div class="trust">
           <a href="#avis"><span class="stars">★★★★★</span> <b>5,0</b> · 34 avis Google</a>
-          <a href="#tarifs"><svg class="i"><use href="#ic-shield"/></svg>Devis et facture sur place</a>
+          <a href="#tarifs"><svg class="i"><use href="#ic-shield"/></svg>Diagnostic : <b>230 € TTC</b></a>
           <span><svg class="i"><use href="#ic-clock"/></svg>Lun – sam · 8h – 18h</span>
           <span><svg class="i"><use href="#ic-pin"/></svg>Basé à Lormont</span>
         </div>
@@ -712,62 +721,67 @@
     </div>
   </div>
 
-  <!-- Services et tarifs : prix à obtenir de Jawad ; en attendant, « sur devis » (devis et facture sur place, d'après ses avis) -->
+  <!-- Services et tarifs : les trois offres de Jawad (diagnostic simple à 230 € TTC, travaux sur devis), avec ce qui est compris -->
   <section id="tarifs">
     <div class="wrap">
       <div class="head-split">
         <div><span class="eyebrow">Services et tarifs</span><h2>Ce que l'on fait, et à quel prix.</h2></div>
         <div>
-          <p class="lead">Maisons, commerces, terrains : basés à Lormont, nous intervenons à Bordeaux et dans toute la Gironde. Chaque chantier est différent : vous avez le prix avant les travaux.</p>
+          <p class="lead">Maisons, commerces, terrains : basés à Lormont, nous intervenons à Bordeaux et dans toute la Gironde. On commence par un diagnostic à prix fixe ; s'il faut des travaux, vous recevez un devis.</p>
           <a class="price-proof" href="#avis"><span class="stars">★★★★★</span><span><b>5,0 sur Google · 34 avis</b> · « Réponse ultra rapide, intervention tout aussi rapide. »</span></a>
         </div>
       </div>
       <div class="price-grid">
         <article class="price-card main">
-          <span class="ic"><svg class="i"><use href="#ic-regard"/></svg></span>
-          <h3>Recherche de regard télécom</h3>
-          <p>Le regard est caché sous la terre, le gravier ou une terrasse ? On le retrouve au détecteur et on le marque au sol.</p>
-          <div class="amount"><strong class="tbd">Sur devis</strong><span class="ins">Devis sur place avant les travaux, facture à la fin.</span></div>
+          <span class="ic"><svg class="i"><use href="#ic-search"/></svg></span>
+          <h3>Diagnostic simple</h3>
+          <p>Pour savoir où et pourquoi la fibre ne passe pas.</p>
+          <ul class="incl">
+            <li>Identification du réseau cuivre, partie privative et publique</li>
+            <li>Aiguillage du fourreau avec aiguille traçable et sonde</li>
+            <li>Contre-aiguillage pour cibler le point bloquant</li>
+            <li>Localisation du point de blocage (regard ou fourreau)</li>
+            <li>Compte rendu d'intervention par e-mail</li>
+            <li>Devis pour les travaux nécessaires</li>
+          </ul>
+          <div class="amount"><small>Prix TTC</small><strong>230 €</strong></div>
         </article>
         <article class="price-card">
           <span class="ic"><svg class="i"><use href="#ic-gaine"/></svg></span>
-          <h3>Déblocage de gaine</h3>
-          <p>Gaine écrasée ou bouchée entre la rue et la maison : on trouve le point de blocage et on rouvre le passage.</p>
+          <h3>Travaux en surface meuble</h3>
+          <p>Terre, pelouse, gravier : on débloque le passage pour que la fibre puisse être raccordée.</p>
+          <ul class="incl">
+            <li>Diagnostic complet inclus</li>
+            <li>Localisation du point de blocage</li>
+            <li>Débouchage et réparation du fourreau ou de la gaine</li>
+            <li>Terrassement pour rendre un regard accessible</li>
+            <li>Passage d'une ficelle de tirage</li>
+            <li>Objectif : une ligne raccordable (engagement de moyens)</li>
+            <li>Compte rendu par e-mail</li>
+          </ul>
           <div class="amount"><strong class="tbd">Sur devis</strong></div>
         </article>
         <article class="price-card">
-          <span class="ic"><svg class="i"><use href="#ic-plus"/></svg></span>
-          <h3>Création de regard</h3>
-          <p>Pas de regard, ou un regard inaccessible ? On crée l'accès qui manque pour faire passer la fibre.</p>
-          <div class="amount"><strong class="tbd">Sur devis</strong></div>
-        </article>
-        <article class="price-card">
-          <span class="ic"><svg class="i"><use href="#ic-cut"/></svg></span>
-          <h3>Réparation de câble fibre</h3>
-          <p>Câble coupé pendant des travaux ou arraché du boîtier : réparation par soudure pour retrouver internet.</p>
-          <div class="amount"><strong class="tbd">Sur devis</strong></div>
-        </article>
-        <article class="price-card">
-          <span class="ic"><svg class="i"><use href="#ic-radar"/></svg></span>
-          <h3>Détection de réseaux enterrés</h3>
-          <p>Avant de creuser, on repère le tracé des réseaux enterrés sur votre terrain.</p>
-          <div class="amount"><strong class="tbd">Sur devis</strong></div>
-        </article>
-        <article class="price-card">
-          <span class="ic"><svg class="i"><use href="#ic-cam"/></svg></span>
-          <h3>Inspection vidéo</h3>
-          <p>Une caméra dans la gaine pour voir où et pourquoi ça bloque, sans rien démonter.</p>
+          <span class="ic"><svg class="i"><use href="#ic-regard"/></svg></span>
+          <h3>Travaux en surface dure</h3>
+          <p>Béton, enrobé, pavés, dalles : les mêmes travaux, avec la maçonnerie et la remise en état.</p>
+          <ul class="incl">
+            <li>Tout ce que comprennent les travaux en surface meuble</li>
+            <li>Maçonnerie</li>
+            <li>Remise en état</li>
+          </ul>
           <div class="amount"><strong class="tbd">Sur devis</strong></div>
         </article>
       </div>
+      <p class="more-svc"><b>Aussi sur devis :</b> réparation de câble fibre par soudure, création de regard, détection de réseaux enterrés, inspection vidéo.</p>
       <div class="price-foot">
-        <p>Le prix est annoncé avant les travaux. Pour en parler, un simple appel suffit.</p>
+        <p>Prix toutes taxes comprises. Le devis des travaux vous est remis après le diagnostic.</p>
         <a class="btn btn-primary" href="tel:+33670150904"><svg class="i i-phone"><use href="#ic-phone"/></svg>Demander un devis · 06 70 15 09 04</a>
       </div>
     </div>
   </section>
 
-  <!-- Avis : cités tels quels depuis la fiche Google « Loc reseau » -->
+  <!-- Avis : repris de la fiche Google « Loc reseau », fautes d'orthographe corrigées à la demande de Lawrence (sens inchangé) -->
   <section id="avis" class="sec-mid">
     <div class="wrap">
       <div class="rev-head">
@@ -781,23 +795,23 @@
       </div>
       <div class="rev-grid">
         <figure class="rev" data-par="0.03">
-          <q>Un très grand Merci car j'ai un commerce à Blaye et je n'avais plus internet, donc plus de paiement en CB...câble fibre arraché du boitier blanc. Le dépannage fut rapide et efficace. Personne très sympa et très pro.</q>
+          <q>Un très grand merci, car j'ai un commerce à Blaye et je n'avais plus internet, donc plus de paiement par CB… Câble fibre arraché du boîtier blanc. Le dépannage fut rapide et efficace. Personne très sympa et très pro.</q>
           <figcaption class="who"><span class="av">I</span><span><strong>Isabelle R.</strong>Avis Google · juin 2026</span></figcaption>
         </figure>
         <figure class="rev" data-par="-0.03">
-          <q>Satisfaction au maximum, merci d’avoir retrouvé mon regard telecom ainsi que d’avoir fait les travaux. Personne très sympathique et très professionnel j’ai pu avoir la fibre le lendemain. Un grand merci !</q>
+          <q>Satisfaction au maximum, merci d’avoir retrouvé mon regard télécom ainsi que d’avoir fait les travaux. Personne très sympathique et très professionnelle, j’ai pu avoir la fibre le lendemain. Un grand merci !</q>
           <figcaption class="who"><span class="av">S</span><span><strong>Samzer</strong>Avis Google · novembre 2025</span></figcaption>
         </figure>
         <figure class="rev" data-par="0.02">
-          <q>intervention dans la journée au Bouscat, équipe efficace, polie, qui a rétabli internet très rapidement (cable sectionné). Je recommande vivement!</q>
+          <q>Intervention dans la journée au Bouscat, équipe efficace, polie, qui a rétabli internet très rapidement (câble sectionné). Je recommande vivement !</q>
           <figcaption class="who"><span class="av">A</span><span><strong>Agathe D.</strong>Avis Google · avril 2026</span></figcaption>
         </figure>
         <figure class="rev" data-par="0.03">
-          <q>Nous avons fait appel à Loc Réseau pour installer la fibre suite à des écrasement de gaine. Service au top. Professionnel et très aimable. Nous recommandons vivement.</q>
+          <q>Nous avons fait appel à Loc Réseau pour installer la fibre suite à des écrasements de gaine. Service au top. Professionnel et très aimable. Nous recommandons vivement.</q>
           <figcaption class="who"><span class="av">V</span><span><strong>Véronique M.</strong>Avis Google · février 2026</span></figcaption>
         </figure>
         <figure class="rev" data-par="-0.03">
-          <q>Equipe professionnelle, a l'écoute, propose des solutions pour débloquer la situation. Gaine débloquée, fibre installée, je revis. Merci Loc Réseau, je vous recommande cette société.</q>
+          <q>Équipe professionnelle, à l'écoute, qui propose des solutions pour débloquer la situation. Gaine débloquée, fibre installée, je revis. Merci Loc Réseau, je vous recommande cette société.</q>
           <figcaption class="who"><span class="av">N</span><span><strong>Nab L.</strong>Avis Google · novembre 2025</span></figcaption>
         </figure>
         <figure class="rev" data-par="0.02">
@@ -1005,7 +1019,7 @@
           <div class="ans"><p>Souvent, le blocage se trouve sur votre terrain : regard introuvable, gaine bouchée ou écrasée entre la rue et la maison. Cette partie privée est en général à la charge du propriétaire. On localise le problème et on débloque le passage ; votre opérateur peut ensuite revenir raccorder la fibre.</p><small>Information générale : renseignez-vous auprès de votre opérateur.</small></div>
         </details>
         <details>
-          <summary>C'est quoi, un regard télécom ?<span class="pm"><svg class="i"><use href="#ic-plus"/></svg></span></summary>
+          <summary>Qu'est-ce qu'un regard télécom ?<span class="pm"><svg class="i"><use href="#ic-plus"/></svg></span></summary>
           <div class="ans"><p>C'est une petite chambre enterrée, fermée par un couvercle, par laquelle passent les câbles du téléphone et de la fibre. Elle finit souvent cachée sous la terre, le gravier ou une terrasse. On la retrouve au détecteur, sans creuser au hasard.</p></div>
         </details>
         <details>
@@ -1013,12 +1027,12 @@
           <div class="ans"><p>Non. On repère l'endroit exact du blocage et on n'intervient que sur le morceau abîmé. Si une ouverture est nécessaire, elle se limite à cet endroit.</p></div>
         </details>
         <details>
-          <summary>Mon câble fibre a été arraché, vous le réparez ?<span class="pm"><svg class="i"><use href="#ic-plus"/></svg></span></summary>
+          <summary>Mon câble fibre a été arraché : pouvez-vous le réparer ?<span class="pm"><svg class="i"><use href="#ic-plus"/></svg></span></summary>
           <div class="ans"><p>Oui : un câble coupé ou arraché peut être réparé par soudure pour retrouver internet. Appelez en décrivant ce qui s'est passé.</p></div>
         </details>
         <details>
           <summary>Combien ça coûte ?<span class="pm"><svg class="i"><use href="#ic-plus"/></svg></span></summary>
-          <div class="ans"><p>Cela dépend de ce qu'il faut faire : retrouver un regard, débloquer une gaine, créer un regard ou réparer un câble. Le prix vous est annoncé avant les travaux, avec un devis sur place.</p></div>
+          <div class="ans"><p>Le diagnostic simple coûte 230 € TTC : on localise le point de blocage, puis vous recevez un compte rendu par e-mail et, s'il faut des travaux, un devis. Les travaux, en surface meuble ou dure, sont sur devis.</p></div>
         </details>
         <details>
           <summary>Où et quand intervenez-vous ?<span class="pm"><svg class="i"><use href="#ic-plus"/></svg></span></summary>
@@ -1437,13 +1451,15 @@
   const verdict = $('#verdict'), advice = $('#advice'), lvl = $('#lvl'), diagList = $('#diagList'), liveTxt = $('#liveTxt');
   if (diagList) {
     const fixes = {
-      regard: ['Recherche de regard télécom', 'On retrouve le regard au détecteur et on le marque au sol.'],
-      gaine: ['Déblocage de gaine', 'On trouve le point de blocage et on rouvre le passage.'],
-      creation: ['Création de regard', "On crée l'accès qui manque pour faire passer la fibre."],
-      cable: ['Réparation de câble fibre', 'Réparation par soudure pour retrouver internet.']
+      diag: ['Diagnostic simple · 230 € TTC', 'On localise le regard ou le point de blocage, avec compte rendu par e-mail.'],
+      gaine: ['Débouchage ou réparation de la gaine', 'Travaux en surface meuble ou dure, sur devis après le diagnostic.'],
+      creation: ['Terrassement ou création de regard', 'On rend le passage accessible pour la fibre, sur devis.'],
+      cable: ['Réparation de câble fibre', 'Réparation par soudure, sur devis.']
     };
     const update = () => {
-      const keys = [...new Set(syms.filter(b => b.getAttribute('aria-pressed') === 'true').map(b => b.dataset.k))];
+      // Tout problème de passage commence par le diagnostic ; « regard introuvable » s'y règle directement
+      const keys = [...new Set(syms.filter(b => b.getAttribute('aria-pressed') === 'true').map(b => b.dataset.k === 'regard' ? 'diag' : b.dataset.k))];
+      if (keys.some(k => k !== 'cable' && k !== 'diag') && !keys.includes('diag')) keys.unshift('diag');
       diagList.textContent = '';
       keys.forEach((k, i) => {
         const li = document.createElement('li');
