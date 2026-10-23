@@ -485,6 +485,10 @@
   .price-card .amount strong { font: 800 28px/1.1 var(--f-display); color: var(--white); }
   .price-card .amount strong.tbd { font-size: 17px; font-weight: 700; color: var(--or-3); }
   /* La note Google et un avis juste au-dessus des prix : on ne juge pas l'offre sur le seul montant */
+  .motto { margin-top: 18px; padding: 2px 0 2px 16px; border-left: 3px solid var(--or); max-width: 60ch; }
+  .motto b { display: block; font: 800 clamp(17px, 1.7vw, 19px)/1.3 var(--f-display); color: var(--text); }
+  .motto b span { color: var(--or-2); }
+  .motto p { margin: 6px 0 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
   .price-proof { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; margin-top: 18px; padding: 10px 14px; border-radius: 12px; background: rgba(255,255,255,.05); border: 1px solid var(--line); color: var(--muted); font-size: 14px; text-decoration: none; transition: border-color .2s; }
   .price-proof:hover { border-color: var(--line-2); }
   .price-proof b { color: var(--text); font-weight: 600; }
@@ -791,6 +795,8 @@
         <div><span class="eyebrow">Services et tarifs</span><h2>Ce que l'on fait, et à quel prix.</h2></div>
         <div>
           <p class="lead">Maisons, commerces, terrains : basés à Lormont, nous intervenons à Bordeaux et dans toute la Gironde. Un diagnostic à prix fixe pour trouver le blocage, puis les travaux s'il en faut.</p>
+          <!-- Phrase de la carte de visite de Jawad -->
+          <div class="motto"><b>LOC RÉSEAU – <span>On localise, vous avancez.</span></b><p>Détection de canalisations d'eau, eaux pluviales, câbles électriques et réseaux enterrés. Gagner du temps et éviter les mauvaises surprises avant vos travaux.</p></div>
           <a class="price-proof" href="#avis"><span class="stars">★★★★★</span><span><b>5,0 sur Google · 34 avis</b> · « Réponse ultra rapide, intervention tout aussi rapide. »</span></a>
         </div>
       </div>
