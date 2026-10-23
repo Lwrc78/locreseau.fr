@@ -536,7 +536,8 @@
   .car { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
   .car::-webkit-scrollbar { display: none; }
   .slide { margin: 0; scroll-snap-align: start; border-radius: 22px; overflow: hidden; background: var(--panel); border: 1px solid var(--line); }
-  .slide img { width: 100%; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--panel-2); }
+  /* height: auto, sinon l'attribut height="800" de l'image l'emporte sur le format 4/5 */
+  .slide img { width: 100%; max-width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; background: var(--panel-2); }
   .slide figcaption { padding: 14px 18px 18px; color: var(--muted); font-size: 14.5px; line-height: 1.45; }
   .slide figcaption b { display: block; margin-bottom: 4px; color: var(--text); font: 700 17px/1.3 var(--f-display); }
   .car-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
@@ -652,9 +653,6 @@
     .brand { font-size: 14px; gap: 8px; }
     .brand svg { width: 30px; height: 30px; }
   }
-  @media (max-width: 1020px) {
-    .car { grid-auto-columns: calc((100% - 18px) / 2); }
-  }
   @media (max-width: 760px) {
     .prow { grid-template-columns: 1fr auto; gap: 12px; padding: 14px 16px; }
     .prow .ic { display: none; }
@@ -668,7 +666,7 @@
     .tdlg-head { padding-top: calc(16px + env(safe-area-inset-top, 0px)); }
     .car-block { margin-top: 28px; }
     .car-nav { display: none; }
-    .car { grid-auto-columns: 82%; gap: 12px; margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px; }
+    .car { grid-auto-columns: 70%; gap: 12px; margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px; }
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
@@ -1717,12 +1715,12 @@
     try { navigator.clipboard.writeText('06 70 15 09 04').then(() => done('Numéro copié ✓'), fallback); } catch (e) { fallback(); }
   });
 
-  // Formulaire : la demande part par e-mail chez Jawad (service FormSubmit, même boîte que son autre site tant qu'il n'en donne pas d'autre) ;
+  // Formulaire : la demande part par e-mail chez Jawad, sur la boîte de LOC RÉSEAU (service FormSubmit) ;
   // si l'envoi échoue, on propose d'appeler ou d'envoyer la même demande par SMS.
   const form = $('#form');
   const sendBtn = $('button[type=submit]', form), sendLbl = $('.lbl', sendBtn);
   const formErr = $('#formErr');
-  const MAIL = 'locfuite.eau@gmail.com';
+  const MAIL = 'loc.reseau@gmail.com';
   form.addEventListener('submit', async e => {
     e.preventDefault();
     if (sendBtn.disabled) return;
